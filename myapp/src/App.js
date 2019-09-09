@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CatsComponent from "./components/CatsComponent";
+import DogsComponent from "./components/DogsComponent";
 
 function App() {
   return (
     <div className="App">
-      <CatsComponent />
+      <DogsComponent />
     </div>
   );
 }

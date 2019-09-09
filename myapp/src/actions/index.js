@@ -1,20 +1,20 @@
 import axios from "axios";
 
-export const FETCH_CATS_START = 'FETCH_CATS_START';
-export const FETCH_CATS_SUCCESS = 'FETCH_CATS_SUCCESS';
-export const FETCH_CATS_FAIL = 'FETCH_CATS_FAIL';
+export const FETCH_DOGS_START = 'FETCH_DOGS_START';
+export const FETCH_DOGS_SUCCESS = 'FETCH_DOGS_SUCCESS';
+export const FETCH_DOGS_FAIL = 'FETCH_DOGS_FAIL';
 
 
-export const getCats = () => dispatch => {
-    dispatch({type: FETCH_CATS_START});
+export const getDogs = () => dispatch => {
+    dispatch({type: FETCH_DOGS_START});
     axios
-    .get("https://cat-fact.herokuapp.com/facts")
+    .get("https://dog.ceo/api/breed/beagle/images")
     .then(res => {
-        console.log(res);
-        dispatch({type: FETCH_CATS_SUCCESS, payload: res.data.results})
+        console.log(res.data.message);
+        dispatch({type: FETCH_DOGS_SUCCESS, payload: res.data.message})
     })
     .catch(err => {
         console.log(err);
-        dispatch({type: FETCH_CATS_FAIL, payload: err})
+        dispatch({type: FETCH_DOGS_FAIL, payload: err})
     })
 }

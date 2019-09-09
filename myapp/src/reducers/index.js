@@ -1,11 +1,11 @@
 import {
-    FETCH_CATS_START,
-    FETCH_CATS_SUCCESS,
-    FETCH_CATS_FAIL
+    FETCH_DOGS_START,
+    FETCH_DOGS_SUCCESS,
+    FETCH_DOGS_FAIL
 } from "../actions";
 
 const initialState = {
-    cats: [],
+    dogs: [],
     error: "",
     isFetching: false
 }
@@ -13,21 +13,21 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     console.log("reducer", action);
     switch(action.type){
-        case FETCH_CATS_START:
+        case FETCH_DOGS_START:
             console.log("mew")
             return {
                 ...state,
                 isFetching: true,
                 error: ""
             };
-        case FETCH_CATS_SUCCESS:
+        case FETCH_DOGS_SUCCESS:
             return {
                 ...state,
-                cats: action.payload,
+                dogs: action.payload,
                 isFetching: false,
                 error: ""
             };
-        case FETCH_CATS_FAIL:
+        case FETCH_DOGS_FAIL:
             return {
                 ...state,
                 error: action.payload
