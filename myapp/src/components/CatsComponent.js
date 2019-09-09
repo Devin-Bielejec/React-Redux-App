@@ -3,17 +3,25 @@ import { connect } from "react-redux";
 import { getCats } from "../actions/";
 
 const CatsComponent = (props) => {
-    props.getCats();
+    const fetchCats = e => {
+        e.preventDefault();
+        props.getCats();
+    }
     return(
-        <section>
-            
-        </section>
+        <>
+            <h1>Do you like cats?</h1>
+
+            <button onClick={fetchCats}>MEOW</button>
+
+        </>
     )
 }
 
 const mapStateToProps = state => {
     return{
-        cats: state.cats
+        cats: state.cats,
+        error: state.error,
+        isFetching: state.isFetching
     }
 }
 

@@ -11,8 +11,10 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
+    console.log("reducer", action);
     switch(action.type){
         case FETCH_CATS_START:
+            console.log("mew")
             return {
                 ...state,
                 isFetching: true,
